@@ -1,0 +1,23 @@
+{
+    "name": "hubotActivity",
+    "version": "0.1",
+    "classes": [
+        {
+            "class": "ibmcloud.activity",
+            "emittarget": "ibmcloud.activity",
+            "texts": [
+                "Show me the activity today.",
+                "What have I done this week?",
+                "What work have I done recently?"
+            ],
+			"parameters": [
+				{
+					"name": "timeframe",
+					"type": "keyword",
+					"prompt": "Enter desired timeframe (today | week)",
+					"values": ["today", "week"]
+				}
+			]
+        }
+    ]
+}
