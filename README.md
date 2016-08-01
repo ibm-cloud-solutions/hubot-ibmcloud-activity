@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/ibm-cloud-solutions/hubot-ibmcloud-activity.svg?branch=master)](https://travis-ci.org/ibm-cloud-solutions/hubot-ibmcloud-activity)
 [![Coverage Status](https://coveralls.io/repos/github/ibm-cloud-solutions/hubot-ibmcloud-activity/badge.svg?branch=master)](https://coveralls.io/github/ibm-cloud-solutions/hubot-ibmcloud-activity?branch=master)
-[![Dependency Status](https://dependencyci.com/github/ibm-cloud-solutions/activity/badge)](https://dependencyci.com/github/ibm-cloud-solutions/hubot-ibmcloud-activity)
+[![Dependency Status](https://dependencyci.com/github/ibm-cloud-solutions/hubot-ibmcloud-activity/badge)](https://dependencyci.com/github/ibm-cloud-solutions/hubot-ibmcloud-activity)
 [![npm](https://img.shields.io/npm/v/hubot-ibmcloud-activity.svg?maxAge=2592000)](https://www.npmjs.com/package/hubot-ibmcloud-activity)
 
 # hubot-ibmcloud-activity
