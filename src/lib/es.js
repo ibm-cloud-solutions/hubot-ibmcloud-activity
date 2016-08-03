@@ -7,12 +7,15 @@
 'use strict';
 
 const elasticsearch = require('elasticsearch');
+const url = require('url');
 const env = require('./env');
 
 let esHost;
 let esClient;
 
-var AUDIT_ENDPOINT = env.endpoint;
+const AUDIT_ENDPOINT = env.endpoint;
+
+const groupId = process.env.group_id || 'DEFAULT_GROUP';
 
 module.exports = {
 	getClient: function(robot) {
@@ -20,10 +23,18 @@ module.exports = {
 			// Pull elastic search endpoint from environment variable
 			esHost = AUDIT_ENDPOINT;
 			if (esHost) {
+				const esUrl = url.parse(esHost);
 				esClient = new elasticsearch.Client({
-					host: esHost,
 					maxSockets: 1000,
-					requestTimeout: 60000
+					requestTimeout: 60000,
+					host: {
+						protocol: 'https',
+						host: esUrl.hostname,
+						port: 443,
+						headers: {
+							'X-HUBOT-AUTH-TOKEN': groupId
+						}
+					}
 				});
 			}
 			else {
