@@ -4,6 +4,7 @@
     "classes": [
         {
             "class": "ibmcloud.activity",
+			"description": "Show recent activity",
             "emittarget": "ibmcloud.activity",
             "texts": [
                 "Show me the activity today.",
