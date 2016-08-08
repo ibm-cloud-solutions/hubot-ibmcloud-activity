@@ -36,7 +36,7 @@
     "hubot-fb": "^3.0.0",
     "hubot-help": "^0.2.0",
     "hubot-shell": "^1.0.2",
-    "hubot-slack": "^3.4.2",
+    "hubot-slack": "^4.0.2",
     "hubot-test-helper": "^1.4.4",
     "hubot-ibmcloud-auth": ">=0.0.8",
     "hubot-ibmcloud-nlc": ">=0.0.20",
