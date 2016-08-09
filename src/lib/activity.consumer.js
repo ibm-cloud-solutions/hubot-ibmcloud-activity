@@ -112,6 +112,7 @@ function getClient() {
 
 module.exports = {
 	BOTACTIVITY_INDEX_NAME: usage_index_name,
+	BOTACTIVITY_DOC_TYPE: usage_doc_type,
 	init,
 	getContainerUUID,
 	getClient

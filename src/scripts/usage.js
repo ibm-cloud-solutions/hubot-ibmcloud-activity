@@ -107,6 +107,7 @@ function getUsageReport(robot, res, timeframe) {
 		robot.logger.info(`${TAG}: Asynch call to ES client search for index:${activity_consumer.BOTACTIVITY_INDEX_NAME} with body:${queryBodyStr}.`);
 		activity_consumer.getClient().search({
 			index: activity_consumer.BOTACTIVITY_INDEX_NAME,
+			type: activity_consumer.BOTACTIVITY_DOC_TYPE,
 			searchType: 'count',
 			body: bot_activity_query
 		}).then((result) => {
