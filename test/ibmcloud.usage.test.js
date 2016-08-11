@@ -6,11 +6,22 @@
   */
 'use strict';
 
-const i18n = require('i18n');
 const path = require('path');
 
 // Leverage rewire to gain access to internal functions.
 const rewire = require('rewire');
+
+var i18n = new (require('i18n-2'))({
+	locales: ['en'],
+	extension: '.json',
+	// Add more languages to the list of locales when the files are created.
+	directory: __dirname + '/../src/messages',
+	defaultLocale: 'en',
+	// Prevent messages file from being overwritten in error conditions (like poor JSON).
+	updateFiles: false
+});
+// At some point we need to toggle this setting based on some user input.
+i18n.setLocale('en');
 
 const env = require('../src/lib/env');
 const Helper = require('hubot-test-helper');
