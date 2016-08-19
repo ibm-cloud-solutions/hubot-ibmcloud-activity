@@ -189,4 +189,20 @@ describe('Testing Usage hubot script', function() {
 		});
 	});
 
+	context('user calls `activity today` when audit endpoint not set', function() {
+		beforeEach(function() {
+			env.endpoint = undefined;
+			return room.user.say('mimiron', '@hubot activity today');
+		});
+
+		afterEach(function() {
+			env.endpoint = process.env.HUBOT_AUDIT_ENDPOINT;
+		});
+
+		it('should respond with feature unavailable', function() {
+			expect(room.messages.length).to.eql(2);
+			expect(room.messages[1]).to.eql(['hubot', '@mimiron ' + i18n.__('usage.info.unavailable')]);
+		});
+	});
+
 });

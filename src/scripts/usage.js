@@ -70,7 +70,7 @@ function getDisplayString(robot, activity_id, activity_count) {
 //
 // Valid timeframes: today, this week
 function getUsageReport(robot, res, timeframe) {
-	if (!activity_consumer.getClient()) {
+	if (activity_consumer.auditDisabled(robot) || !activity_consumer.getClient()) {
 		return Promise.resolve(i18n.__('usage.info.unavailable'));
 	}
 
