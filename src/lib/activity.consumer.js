@@ -20,11 +20,19 @@ const usage_index_name = 'hubotusage';
 const usage_doc_type = 'UsageEntry';
 
 let esClient;
+let auditDisabledLogged = false;
 
-function auditDisabled() {
+function auditDisabled(robot) {
 	var isDisabled = (process.env.HUBOT_BLUEMIX_AUDIT_DISABLED && (process.env.HUBOT_BLUEMIX_AUDIT_DISABLED === 'TRUE' || process.env.HUBOT_BLUEMIX_AUDIT_DISABLED === 'true'));
-	var isNotDefined = !es.getClient();
-	return isDisabled || isNotDefined;
+	var isNotDefined = !env.endpoint;
+	var auditDisabled = isDisabled || isNotDefined;
+
+	if (auditDisabled && !auditDisabledLogged) {
+		robot.logger.warning('Auditing is disabled. To enable auditing, ensure HUBOT_AUDIT_ENDPOINT is defined and HUBOT_BLUEMIX_AUDIT_DISABLED is not set to true');
+		auditDisabledLogged = true;
+	}
+
+	return auditDisabled;
 }
 
 // UUID of the container running this bot.
@@ -86,8 +94,7 @@ function createActivityDoc(robot, activity){
  */
 function init(robot) {
 	return new Promise((resolve, reject) => {
-		if (auditDisabled()) {
-			robot.logger.warning('Auditing is disabled. To enable auditing, ensure HUBOT_AUDIT_ENDPOINT is defined and HUBOT_BLUEMIX_AUDIT_DISABLED is not set to true');
+		if (auditDisabled(robot)) {
 			reject('Auditing is disabled. To enable auditing, ensure HUBOT_AUDIT_ENDPOINT is defined and HUBOT_BLUEMIX_AUDIT_DISABLED is not set to true');
 		}
 		else {
@@ -113,6 +120,7 @@ function getClient() {
 module.exports = {
 	BOTACTIVITY_INDEX_NAME: usage_index_name,
 	BOTACTIVITY_DOC_TYPE: usage_doc_type,
+	auditDisabled,
 	init,
 	getContainerUUID,
 	getClient

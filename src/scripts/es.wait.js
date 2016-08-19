@@ -24,7 +24,7 @@ const consumer = require(path.resolve(__dirname, '..', 'lib', 'activity.consumer
 
 module.exports = (robot) => {
 	robot.receiveMiddleware((context, next, done) => {
-		if (consumer.getClient()){
+		if (consumer.auditDisabled(robot) || consumer.getClient()){
 			next(done);
 		}
 		else {
