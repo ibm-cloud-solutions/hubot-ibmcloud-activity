@@ -109,14 +109,14 @@ describe('Testing Usage hubot script', function() {
 			var startTime = 0;
 			var endTime = 1;
 			var chartDocLink = usageRewire.__get__('getChartDocLink')(startTime, endTime);
-			expect(chartDocLink).to.eql('http://bot-charts.mybluemix.net?startTime=0&endTime=1&uuid=nothing');
+			expect(chartDocLink).to.eql('http://bot-charts.ng.bluemix.net?startTime=0&endTime=1&uuid=nothing');
 		});
 
 		it('should respond with chartPreviewLink', function(){
 			var startTime = 0;
 			var endTime = 1;
 			var chartPreviewLink = usageRewire.__get__('getChartPreviewLink')(startTime, endTime);
-			expect(chartPreviewLink).to.eql('http://bot-charts.mybluemix.net/preview?startTime=0&endTime=1&uuid=nothing');
+			expect(chartPreviewLink).to.eql('http://bot-charts.ng.bluemix.net/preview?startTime=0&endTime=1&uuid=nothing');
 		});
 
 		it('should filter out untranslated keys', function() {
