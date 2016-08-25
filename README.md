@@ -22,7 +22,7 @@ var activityDoc = {
   * [Usage](#usage)
   * [Commands](#commands)
   * [Hubot Adapter Setup](#hubot-adapter-setup)
-	* [Cognitive Setup](#cognitive-setup)
+  * [Cognitive Setup](#cognitive-setup)
   * [Development](#development)
   * [License](#license)
   * [Contribute](#contribute)
