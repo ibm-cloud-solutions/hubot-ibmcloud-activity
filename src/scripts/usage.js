@@ -37,11 +37,11 @@ function isChartingEnabled(robot) {
 }
 
 function getChartDocLink(startTime, endTime) {
-	return `http://bot-charts.mybluemix.net?startTime=${startTime}&endTime=${endTime}&uuid=${activity_consumer.getContainerUUID()}`;
+	return `http://bot-charts.ng.bluemix.net?startTime=${startTime}&endTime=${endTime}&uuid=${activity_consumer.getContainerUUID()}`;
 }
 
 function getChartPreviewLink(startTime, endTime) {
-	return `http://bot-charts.mybluemix.net/preview?startTime=${startTime}&endTime=${endTime}&uuid=${activity_consumer.getContainerUUID()}`;
+	return `http://bot-charts.ng.bluemix.net/preview?startTime=${startTime}&endTime=${endTime}&uuid=${activity_consumer.getContainerUUID()}`;
 }
 
 // substitutes the translated activity name into the generic "performed activity" strings.
