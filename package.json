@@ -49,7 +49,7 @@
   "peerDependencies": {
     "hubot": "^2.19.0",
     "hubot-ibmcloud-cognitive-lib": "latest",
-    "hubot-ibmcloud-formatter": "latest",
+    "hubot-ibmcloud-formatter": ">=0.0.32",
     "hubot-ibmcloud-utils": "latest",
     "i18n-2": "^0.6.3",
     "lodash": "^4.13.1",
