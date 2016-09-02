@@ -63,6 +63,6 @@
     "index.js"
   ],
   "dependencies": {
-    "elasticsearch": "^11.0.1",
+    "elasticsearch": "^11.0.1"
   }
 }
