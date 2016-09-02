@@ -48,8 +48,12 @@
   },
   "peerDependencies": {
     "hubot": "^2.19.0",
+    "hubot-ibmcloud-cognitive-lib": ">=0.0.40",
+    "hubot-ibmcloud-formatter": ">=0.0.32",
+    "hubot-ibmcloud-utils": ">=0.0.14",
     "i18n-2": "^0.6.3",
-    "hubot-ibmcloud-formatter": ">=0.0.10"
+    "lodash": "^4.13.1",
+    "request": "^2.74.0"
   },
   "engines": {
     "node": ">= 4.2.0"
@@ -59,10 +63,6 @@
     "index.js"
   ],
   "dependencies": {
-    "hubot-ibmcloud-cognitive-lib": "latest",
-    "hubot-ibmcloud-utils": "latest",
-    "elasticsearch": "^11.0.1",
-    "lodash": "^4.13.1",
-    "request": "^2.72.0"
+    "elasticsearch": "^11.0.1"
   }
 }
