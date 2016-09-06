@@ -19,8 +19,8 @@
  */
 'use strict';
 
-var path = require('path');
-var TAG = path.basename(__filename);
+const path = require('path');
+const TAG = path.basename(__filename);
 
 const utils = require('hubot-ibmcloud-utils').utils;
 const activity_consumer = require('../lib/activity.consumer');// getClient() will only be set if usage tracking is enabled and the related ES index is ready to use.
@@ -46,8 +46,8 @@ function getChartPreviewLink(startTime, endTime) {
 
 // substitutes the translated activity name into the generic "performed activity" strings.
 function getDisplayString(robot, activity_id, activity_count) {
-	var displayString;
-	var translated_activity = i18n.__(activity_id);
+	let displayString;
+	let translated_activity = i18n.__(activity_id);
 
 	if (translated_activity && translated_activity !== activity_id) { // i18n will return the original key if it's unknown.
 		if (activity_count === 1) {
@@ -75,8 +75,8 @@ function getUsageReport(robot, res, timeframe) {
 	}
 
 	return new Promise((resolve, reject) => {
-		var startTime = new Date();
-		var endTime = new Date();
+		let startTime = new Date();
+		let endTime = new Date();
 
 		if (timeframe.indexOf('today') > -1) {
 			// This is 12 midnight in the timezone the bot is running in.
@@ -84,7 +84,7 @@ function getUsageReport(robot, res, timeframe) {
 		}
 		else if (timeframe.indexOf('week') > -1) {
 			// 7 days from now.
-			var seven_days_in_ms = 1000 * 60 * 60 * 24 * 7;
+			let seven_days_in_ms = 1000 * 60 * 60 * 24 * 7;
 			startTime = new Date(startTime - seven_days_in_ms);
 		}
 		else {
@@ -251,7 +251,7 @@ module.exports = (robot) => {
 // It will read from a peer messages.json file.  Later, these
 // messages can be referenced throughout the module.
 // --------------------------------------------------------------
-var i18n = new (require('i18n-2'))({
+const i18n = new (require('i18n-2'))({
 	locales: ['en'],
 	extension: '.json',
 	// Add more languages to the list of locales when the files are created.
