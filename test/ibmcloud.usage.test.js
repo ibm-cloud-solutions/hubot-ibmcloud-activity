@@ -11,7 +11,7 @@ const path = require('path');
 // Leverage rewire to gain access to internal functions.
 const rewire = require('rewire');
 
-var i18n = new (require('i18n-2'))({
+const i18n = new (require('i18n-2'))({
 	locales: ['en'],
 	extension: '.json',
 	// Add more languages to the list of locales when the files are created.
@@ -73,19 +73,19 @@ describe('Testing Usage hubot script', function() {
 	context('test activity doc creation', function() {
 		it('should create an activyt doc', function() {
 			env.uuid = 'nothing';
-			var activityDoc = {
+			let activityDoc = {
 				app_name: 'app_name',
 				app_guid: 'app_guid',
 				space_guid: 'space_guid',
 				space_name: 'space_name',
 				event_type: 'event_type'
 			};
-			var indexFunc = function() {
+			let indexFunc = function() {
 				return new Promise((resolve, reject) => {
 					resolve({created: false });
 				});
 			};
-			var fakeESClient = { index: indexFunc};
+			let fakeESClient = { index: indexFunc};
 
 			activityConsumerRewire.__set__('esClient', fakeESClient);
 			activityConsumerRewire.__get__('createActivityDoc')(room.robot, activityDoc);
@@ -106,16 +106,16 @@ describe('Testing Usage hubot script', function() {
 		});
 
 		it('should respond with chartDocLink', function(){
-			var startTime = 0;
-			var endTime = 1;
-			var chartDocLink = usageRewire.__get__('getChartDocLink')(startTime, endTime);
+			let startTime = 0;
+			let endTime = 1;
+			let chartDocLink = usageRewire.__get__('getChartDocLink')(startTime, endTime);
 			expect(chartDocLink).to.eql('http://bot-charts.ng.bluemix.net?startTime=0&endTime=1&uuid=nothing');
 		});
 
 		it('should respond with chartPreviewLink', function(){
-			var startTime = 0;
-			var endTime = 1;
-			var chartPreviewLink = usageRewire.__get__('getChartPreviewLink')(startTime, endTime);
+			let startTime = 0;
+			let endTime = 1;
+			let chartPreviewLink = usageRewire.__get__('getChartPreviewLink')(startTime, endTime);
 			expect(chartPreviewLink).to.eql('http://bot-charts.ng.bluemix.net/preview?startTime=0&endTime=1&uuid=nothing');
 		});
 
