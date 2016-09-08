@@ -76,5 +76,11 @@
 	"usage.summary.day.text": "Bot usage for today.",
 	"usage.summary.week": "Here's what I've been up to this week:",
 	"usage.summary.week.text": "Bot usage for this week.",
-	"activity.badkey": "activity.badkey"
+	"activity.badkey": "activity.badkey",
+	"redis.delete.nottls": "Deleted Redis keys without expiration",
+	"redis.delete.key": "Deleted a specified Redis key",
+	"redis.nottls": "Detected Redis keys without expiration",
+	"redis.monitor.nottls": "Monitored Redis keys for absence of expiration",
+	"redis.monitor.cancel": "Stopped monitoring Redis keys",
+	"redis.slowlog": "Detected slow running Redis commands"
 }
