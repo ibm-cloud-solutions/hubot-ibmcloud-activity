@@ -6,6 +6,7 @@
             "class": "ibmcloud.activity",
             "description": "Show recent activity",
             "emittarget": "ibmcloud.activity",
+            "confirmprompt": "Would you like to see the activity for the ${timeframe} (yes or no)?",
             "texts": [
                 "Show me the activity today.",
                 "What have I done this week?",
